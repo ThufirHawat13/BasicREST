@@ -51,7 +51,7 @@ public class PeopleController {
     }
 
     @PostMapping()
-    public ResponseEntity<HttpStatus> create(@RequestBody @Valid Person person, BindingResult bindingResult) {
+    public ResponseEntity<HttpStatus> create(@RequestBody @Valid PersonDTO personDTO, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
             StringBuilder errorMessage = new StringBuilder();
 
@@ -64,7 +64,7 @@ public class PeopleController {
 
             throw new PersonNotCreatedException(errorMessage.toString());
         }
-        peopleService.save(person);
+        peopleService.save(convertToPerson(personDTO));
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
