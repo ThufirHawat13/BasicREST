@@ -1,6 +1,5 @@
-package com.example.FirstRestApp.DTO;
+package com.example.BasicREST.DTO;
 
-import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;

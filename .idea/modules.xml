@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FirstRestApp.iml" filepath="$PROJECT_DIR$/FirstRestApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BasicREST.iml" filepath="$PROJECT_DIR$/BasicREST.iml" />
     </modules>
   </component>
 </project>

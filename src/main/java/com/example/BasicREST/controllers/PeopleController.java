@@ -1,11 +1,11 @@
-package com.example.FirstRestApp.controllers;
+package com.example.BasicREST.controllers;
 
-import com.example.FirstRestApp.DTO.PersonDTO;
-import com.example.FirstRestApp.models.Person;
-import com.example.FirstRestApp.services.PeopleService;
-import com.example.FirstRestApp.util.PersonErrorResponse;
-import com.example.FirstRestApp.util.PersonNotCreatedException;
-import com.example.FirstRestApp.util.PersonNotFoundException;
+import com.example.BasicREST.DTO.PersonDTO;
+import com.example.BasicREST.models.Person;
+import com.example.BasicREST.services.PeopleService;
+import com.example.BasicREST.util.PersonErrorResponse;
+import com.example.BasicREST.util.PersonNotCreatedException;
+import com.example.BasicREST.util.PersonNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
