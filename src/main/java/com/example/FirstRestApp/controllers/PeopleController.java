@@ -77,10 +77,30 @@ public class PeopleController {
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
-//    @PatchMapping("/{id}")
-//    public String update(@PathVariable("id")int id) {
-//
-//    }
+    @PatchMapping("/{id}")
+    public ResponseEntity<HttpStatus> update(@PathVariable("id")int id, @RequestBody @Valid PersonDTO personDTO, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) {
+            StringBuilder errorMessage = new StringBuilder();
+
+            List<FieldError> errors = bindingResult.getFieldErrors();
+            for(FieldError error : errors) {
+                errorMessage.append(error.getField())
+                        .append(" - ").append(error.getDefaultMessage())
+                        .append(";");
+            }
+
+            throw new PersonNotCreatedException(errorMessage.toString());
+        }
+        peopleService.update(convertToPerson(personDTO), id);
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
+
+    @DeleteMapping("/{id}")
+    public  ResponseEntity<HttpStatus> delete(@PathVariable("id") int id) {
+
+        peopleService.delete(id);
+        return ResponseEntity.ok(HttpStatus.OK);
+    }
 
     private Person convertToPerson(PersonDTO personDTO) {
         return modelMapper.map(personDTO, Person.class);
