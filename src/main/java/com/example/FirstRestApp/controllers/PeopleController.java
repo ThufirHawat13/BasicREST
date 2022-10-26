@@ -1,11 +1,11 @@
-package com.example.BasicREST.controllers;
+package com.example.FirstRestApp.controllers;
 
-import com.example.BasicREST.DTO.PersonDTO;
-import com.example.BasicREST.models.Person;
-import com.example.BasicREST.services.PeopleService;
-import com.example.BasicREST.util.PersonErrorResponse;
-import com.example.BasicREST.util.PersonNotCreatedException;
-import com.example.BasicREST.util.PersonNotFoundException;
+import com.example.FirstRestApp.DTO.PersonDTO;
+import com.example.FirstRestApp.models.Person;
+import com.example.FirstRestApp.services.PeopleService;
+import com.example.FirstRestApp.util.PersonErrorResponse;
+import com.example.FirstRestApp.util.PersonNotCreatedException;
+import com.example.FirstRestApp.util.PersonNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -51,7 +51,7 @@ public class PeopleController {
     }
 
     @PostMapping()
-    public ResponseEntity<HttpStatus> create(@RequestBody @Valid PersonDTO personDTO, BindingResult bindingResult) {
+    public ResponseEntity<HttpStatus> create(@RequestBody @Valid Person person, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
             StringBuilder errorMessage = new StringBuilder();
 
@@ -64,7 +64,7 @@ public class PeopleController {
 
             throw new PersonNotCreatedException(errorMessage.toString());
         }
-        peopleService.save(convertToPerson(personDTO));
+        peopleService.save(person);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 

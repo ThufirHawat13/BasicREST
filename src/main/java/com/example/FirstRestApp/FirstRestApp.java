@@ -1,4 +1,4 @@
-package com.example.BasicREST;
+package com.example.FirstRestApp;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class FirstRestAppApplication {
+public class FirstRestApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FirstRestAppApplication.class, args);
+		SpringApplication.run(FirstRestApp.class, args);
 	}
 
 	@Bean

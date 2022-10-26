@@ -1,4 +1,4 @@
-package com.example.BasicREST.DTO;
+package com.example.FirstRestApp.DTO;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;

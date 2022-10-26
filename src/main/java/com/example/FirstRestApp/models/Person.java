@@ -1,4 +1,4 @@
-package com.example.BasicREST.models;
+package com.example.FirstRestApp.models;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;

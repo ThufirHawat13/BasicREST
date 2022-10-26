@@ -1,4 +1,4 @@
-package com.example.BasicREST.util;
+package com.example.FirstRestApp.util;
 
 public class PersonErrorResponse {
     private String message;

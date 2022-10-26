@@ -1,8 +1,8 @@
-package com.example.BasicREST.services;
+package com.example.FirstRestApp.services;
 
-import com.example.BasicREST.models.Person;
-import com.example.BasicREST.repositories.PeopleRepository;
-import com.example.BasicREST.util.PersonNotFoundException;
+import com.example.FirstRestApp.models.Person;
+import com.example.FirstRestApp.repositories.PeopleRepository;
+import com.example.FirstRestApp.util.PersonNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
