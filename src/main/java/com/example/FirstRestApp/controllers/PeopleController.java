@@ -49,7 +49,7 @@ public class PeopleController {
                 System.currentTimeMillis());
         return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
-
+ 
     @PostMapping()
     public ResponseEntity<HttpStatus> create(@RequestBody @Valid PersonDTO personDTO, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
@@ -62,7 +62,7 @@ public class PeopleController {
                         .append(";");
             }
 
-            throw new PersonNotCreatedException(errorMessage.toString());
+           throw new PersonNotCreatedException(errorMessage.toString());
         }
         peopleService.save(convertToPerson(personDTO));
         return ResponseEntity.ok(HttpStatus.OK);

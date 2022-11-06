@@ -34,12 +34,13 @@ public class PeopleService {
     @Transactional
     public void save(Person person) {
 
-        person.setUpdatedAt(LocalDateTime.now());
+        person.setCreatedAt(LocalDateTime.now());
         peopleRepository.save(person);
     }
 
     @Transactional
     public void update(Person updPerson, int id) {
+        updPerson.setCreatedAt(peopleRepository.findById(id).get().getCreatedAt());
         updPerson.setUpdatedAt(LocalDateTime.now());
         updPerson.setId(id);
         peopleRepository.save(updPerson);

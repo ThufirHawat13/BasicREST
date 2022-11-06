@@ -1,9 +1,8 @@
 package com.example.FirstRestApp.DTO;
 
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+
+
+import javax.validation.constraints.*;
 
 public class PersonDTO {
 
@@ -12,6 +11,7 @@ public class PersonDTO {
     private String name;
 
     @Min(value = 0, message = "Age should be greater than 0")
+    @Max(value = 100, message = "Age shouldn't be greater than 100")
     private int age;
 
     @Email(message = "Input correct email")
